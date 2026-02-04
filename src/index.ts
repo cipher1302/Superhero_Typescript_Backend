@@ -1,6 +1,7 @@
 import express from 'express'
 import { initialDatabase } from './db/sequelize/sequelizer.ts'
 import { getEnvVar } from './utils/getEnvVar.ts'
+import { Superhero } from './db/models/SuperHeroModel.ts'
 
 
 const PORT = Number(getEnvVar('PORT',"3000"))
