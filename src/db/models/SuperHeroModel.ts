@@ -1,8 +1,11 @@
 import {sequelize} from '../sequelize/sequelizer.ts'
 import { DataTypes } from 'sequelize'
+import type { ModelDefined } from 'sequelize/types/model';
 import {baseModelConfig} from './BaseModel.ts'
+import type {ISuperheroAttributes} from './modelSupport/SuperHeroInterfaces.ts'
+import type { CreateSuperheroType } from './modelSupport/SuperHeroTypes.ts'
 
-export const Superhero = sequelize.define('Superhero',{
+export const Superhero :ModelDefined<ISuperheroAttributes,CreateSuperheroType> = sequelize.define('Superhero',{
     ...baseModelConfig,
     nickname:{
         type:DataTypes.STRING,
